@@ -115,7 +115,7 @@ main {
   height: 250px;
   background-color: #ddd;
   border-radius: 10px;
-  overflow: hidden; /* keeps image inside */
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +124,7 @@ main {
 .profile-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fills container without distortion */
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -245,7 +245,18 @@ footer {
     flex-direction: column;
   }
   
+  @media (max-width: 600px) {
   .profile-image {
-    width: 100%;
+    width: 100%;       /* full width of parent */
+    height: auto;      /* let height adjust naturally */
+    max-width: 300px;  /* optional: cap the size */
+    margin: 0 auto;    /* center it */
   }
+
+  .profile-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
 }
