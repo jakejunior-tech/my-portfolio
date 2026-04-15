@@ -25,7 +25,7 @@
     </section>
 
     <section class="contact-form">
-      <form action="#" method="POST">
+      <form id="contactForm" action="#" method="POST">
         <div class="form-group">
           <label for="name">Your Name</label>
           <input type="text" id="name" name="name" required>
@@ -46,7 +46,7 @@
           <textarea id="message" name="message" required></textarea>
         </div>
         
-        <button type="submit" class="submit-button">Send Message</button>
+        <button type="button" class="submit-button" onclick="sendToWhatsApp()">Send Message</button>
       </form>
     </section>
 
@@ -64,5 +64,24 @@
   <footer>
     <p>2026 My Portfolio. All rights reserved.</p>
   </footer>
+
+  <script>
+    function sendToWhatsApp() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields!');
+        return;
+      }
+
+      const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
+      const whatsappURL = `https://wa.me/2348145173339?text=${whatsappMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
 </body>
 </html>
