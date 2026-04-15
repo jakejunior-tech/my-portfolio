@@ -1,0 +1,96 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter create --org com.example calculator_app
+
+## exception
+
+PathAccessException: PathAccessException: Cannot open file, path = 'C:\Users\HP\OneDrive\Desktop\TEST\calculator_app\ios\Runner\SceneDelegate.swift' (OS Error: The process cannot access the file because it is being used by another process, errno = 32)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:779:7)
+#1      _File.openSync (dart:io/file_impl.dart:572:5)
+#2      ForwardingFile.openSync (package:file/src/forwarding/forwarding_file.dart:74:16)
+#3      ErrorHandlingFile.openSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:277:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:552:14)
+#5      ErrorHandlingFile.openSync (package:flutter_tools/src/base/error_handling_io.dart:276:12)
+#6      ErrorHandlingFile.copySync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:319:29)
+#7      _runSync (package:flutter_tools/src/base/error_handling_io.dart:552:14)
+#8      ErrorHandlingFile.copySync (package:flutter_tools/src/base/error_handling_io.dart:313:5)
+#9      Template.render.<anonymous closure> (package:flutter_tools/src/template.dart:415:18)
+#10     _LinkedHashMapMixin.forEach (dart:_compact_hash:765:13)
+#11     Template.render (package:flutter_tools/src/template.dart:310:24)
+#12     CreateBase.renderMerged (package:flutter_tools/src/commands/create_base.dart:444:21)
+<asynchronous suspension>
+#13     CreateBase.generateApp (package:flutter_tools/src/commands/create_base.dart:467:23)
+<asynchronous suspension>
+#14     CreateCommand.runCommand (package:flutter_tools/src/commands/create.dart:482:31)
+<asynchronous suspension>
+#15     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1590:27)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#17     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#18     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#20     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#21     FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#22     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#23     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#24     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel stable, 3.41.6, on Microsoft Windows [Version 10.0.26100.8037], locale en-US) [1,094ms]
+    • Flutter version 3.41.6 on channel stable at C:\flutter
+    ! The flutter binary is not on your path. Consider adding C:\flutter\bin to your path.
+    ! The dart binary is not on your path. Consider adding C:\flutter\bin to your path.
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision db50e20168 (3 weeks ago), 2026-03-25 16:21:00 -0700
+    • Engine revision 425cfb54d0
+    • Dart version 3.11.4
+    • DevTools version 2.54.2
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+    • If those were intentional, you can disregard the above warnings; however it is recommended to use "git" directly to perform update checks and upgrades.
+
+[✓] Windows Version (11 Pro 64-bit, 24H2, 2009) [5.7s]
+
+[✗] Android toolchain - develop for Android devices [699ms]
+    ✗ Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[✓] Chrome - develop for the web [675ms]
+    • Chrome at C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+
+[✓] Visual Studio - develop Windows apps (Visual Studio Build Tools 2026 18.4.3) [672ms]
+    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools
+    • Visual Studio Build Tools 2026 version 18.4.11626.88
+    • Windows 10 SDK version 10.0.26100.0
+
+[✓] Connected device (3 available) [490ms]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.26100.8037]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 146.0.7680.178
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 146.0.3856.109
+
+[✓] Network resources [2.1s]
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```
